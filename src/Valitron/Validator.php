@@ -1591,4 +1591,23 @@ class Validator
         //array contains at least one key that's not an can not be cast to an integer
         return count(array_filter(array_keys($input), 'is_string')) > 0;
     }
+
+
+    /**
+     * 
+     * @param array $allowedFields
+     * @return void
+     */
+    public function AllowedFields(array $allowedFields)
+    {
+        $extraFields = array_diff(array_keys($this->_fields), $allowedFields);
+        if (!empty($extraFields)) {
+            $langMessages = $this->getRuleMessages(); 
+            $errorMessage = isset($langMessages['extra_input']) ? $langMessages['extra_input'] : 'Unexpected input';
+            foreach ($extraFields as $field) {
+                $this->_errors[$field][] = $errorMessage;
+            }
+        }
+    }
+
 }
