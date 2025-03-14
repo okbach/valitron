@@ -56,6 +56,21 @@ if($v->validate()) {
 }
 ```
 
+
+## AllowedFields Usage
+
+The `AllowedFields` method is used to restrict input data to a predefined set of fields.  
+If extra fields are detected, an error message will display the unexpected fields.
+
+### Example:
+```php
+$allowedKeys = ['name', 'email', 'phone_number', 'password'];
+$v->AllowedFields($allowedKeys);
+```
+
+
+
+
 Using this format, you can validate `$_POST` data directly and easily,
 and can even apply a rule like `required` to an array of fields:
 
