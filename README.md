@@ -34,7 +34,7 @@ Valitron uses [Composer](http://getcomposer.org) to install and update:
 
 ```
 curl -s http://getcomposer.org/installer | php
-php composer.phar require vlucas/valitron
+php composer.phar require okbach/valitron
 ```
 
 The examples below use PHP 5.4 syntax, but Valitron works on PHP 5.3+.
